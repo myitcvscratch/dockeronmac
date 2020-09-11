@@ -11,17 +11,15 @@ jobs:
     runs-on: ${{ matrix.platform }}
     steps:
       - run: brew update
-
-      # run: |
-      #   brew update
-      #   brew install docker
-      #   brew install docker-machine
-      #   docker-machine create --driver virtualbox default
-      #   docker-machine ls
-      #   docker-machine start default
-      #   docker-machine ls
-      #   eval $(docker-machine env default)
-      #   docker run hello-world
-
+      - run: brew update
+      - run: brew install docker
+      - run: brew install docker-machine
+      - run: docker-machine create --driver virtualbox default
+      - run: docker-machine ls
+      - run: docker-machine start default
+      - run: docker-machine ls
+      - run: |
+        eval $(docker-machine env default)
+        docker run hello-world
 
         # brew cask install virtualbox
