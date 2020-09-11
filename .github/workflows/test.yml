@@ -12,6 +12,7 @@ jobs:
         platform: [macos-latest]
     runs-on: ${{ matrix.platform }}
     steps:
+    - run: touch README.md
     - run: brew install docker
     - run: brew install docker-machine
     - run: brew install docker-compose
