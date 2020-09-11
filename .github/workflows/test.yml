@@ -3,7 +3,7 @@
 on: [push, pull_request]
 name: Test
 env:
-  HOMEBREW_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 jobs:
   test:
     strategy:
