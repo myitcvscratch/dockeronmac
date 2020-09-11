@@ -14,7 +14,8 @@ jobs:
     steps:
     - run: brew install docker
     - run: brew install docker-machine
+    - run: brew install docker-compose
     - run: docker-machine create --driver virtualbox default
     - run: docker-machine ls
-    - run: eval $(docker-machine env default) && docker run hello-world
+    - run: eval $(docker-machine env default) && docker run -v $PWD:/tmp golang ls /tmp
 
