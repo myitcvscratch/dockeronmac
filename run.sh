@@ -2,7 +2,7 @@
 
 echo "-- Starting Docker.app, if necessary..."
 
-open -g -a Docker.app || exit
+open -g -a Docker || exit
 
 # Wait for the server to start up, if applicable.
 i=0
