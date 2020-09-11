@@ -18,5 +18,5 @@ jobs:
     - run: brew install docker-compose
     - run: docker-machine create --driver virtualbox default
     - run: docker-machine ls
-    - run: eval $(docker-machine env default) && docker run -v $PWD:/tmp golang ls /tmp
+    - run: eval $(docker-machine env default) && docker run --rm -v create-your-first-guide:/var --privileged -it playwithgo/create-your-first-guide docker version
 
