@@ -12,11 +12,12 @@ jobs:
         platform: [macos-latest]
     runs-on: ${{ matrix.platform }}
     steps:
-    - run: touch README.md
-    - run: brew install docker
-    - run: brew install docker-machine
-    - run: brew install docker-compose
-    - run: docker-machine create --driver virtualbox default
-    - run: docker-machine ls
-    - run: eval $(docker-machine env default) && docker run --rm -v create-your-first-guide:/var --privileged playwithgo/create-your-first-guide docker version
+    - run: docker run --rm -v create-your-first-guide:/var --privileged playwithgo/create-your-first-guide docker version
+    # - run: touch README.md
+    # - run: brew install docker
+    # - run: brew install docker-machine
+    # - run: brew install docker-compose
+    # - run: docker-machine create --driver virtualbox default
+    # - run: docker-machine ls
+    # - run: eval $(docker-machine env default) && docker run --rm -v create-your-first-guide:/var --privileged playwithgo/create-your-first-guide docker version
 
