@@ -12,17 +12,15 @@ jobs:
     steps:
     - name: Install Docker
       run: |
-        env
-
-        # brew update
-        # brew install docker
-        # brew install docker-machine
-        # docker-machine create --driver virtualbox default
-        # docker-machine ls
-        # docker-machine start default
-        # docker-machine ls
-        # eval $(docker-machine env default)
-        # docker run hello-world
+        brew update
+        brew install docker
+        brew install docker-machine
+        docker-machine create --driver virtualbox default
+        docker-machine ls
+        docker-machine start default
+        docker-machine ls
+        eval $(docker-machine env default)
+        docker run hello-world
 
 
         # brew cask install virtualbox
