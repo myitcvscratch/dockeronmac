@@ -24,13 +24,12 @@ jobs:
     - run: ls /Applications
     - run: ./run.sh
     - run: git clone https://github.com/play-with-docker/play-with-docker
-    - run: echo "cd play-with-docker" >> ~/.bashrc
     - run: docker swarm init
     - run: docker pull franela/dind
-    - run: go mod vendor
-    - run: docker-compose up -d
+    - run: cd play-with-docker && go mod vendor
+    - run: cd play-with-docker && docker-compose up -d
     - run: sleep 60
-    - run: docker-compose logs
+    - run: cd play-with-docker && docker-compose logs
     - run: curl http://localhost
 
 
