@@ -28,7 +28,7 @@ jobs:
     - run: cd play-with-docker
     - run: docker pull franela/dind
     - run: go mod vendor
-    - run: docker-compose up
+    - run: docker-compose up -d
     - run: sleep 60
     - run: docker-compose logs
     - run: curl http://localhost
