@@ -26,7 +26,6 @@ jobs:
     - run: git clone https://github.com/play-with-docker/play-with-docker
     - run: docker swarm init
     - run: docker pull franela/dind
-    - run: cd play-with-docker && go mod vendor
     - run: cd play-with-docker && docker-compose up -d
     - run: sleep 180
     - run: cd play-with-docker && docker-compose logs
