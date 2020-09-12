@@ -23,12 +23,22 @@ jobs:
     - run: sudo /bin/launchctl load /Library/LaunchDaemons/com.docker.vmnetd.plist
     - run: ls /Applications
     - run: ./run.sh
+    - run: git clone https://github.com/play-with-docker/play-with-docker
+    - run: docker swarm init
+    - run: cd play-with-docker
+    - run: docker pull franela/dind
+    - run: go mod vendor
+    - run: docker-compose up
+    - run: sleep 60
+    - run: docker-compose logs
+    - run: curl http://localhost
+
+
+    # Previously working port mapping stuff
     - run: docker run --rm -v /etc:/blah golang ls /blah
     - run: docker pull nginxdemos/hello
     - run: docker run --rm -d -p 80:80 nginxdemos/hello
     - run: sleep 10
-    - run: curl http://localhost
-
 
     # - run: touch README.md
     # - run: brew install docker
