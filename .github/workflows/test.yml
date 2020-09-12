@@ -24,8 +24,8 @@ jobs:
     - run: ls /Applications
     - run: ./run.sh
     - run: git clone https://github.com/play-with-docker/play-with-docker
+    - run: echo "cd play-with-docker" >> ~/.bashrc
     - run: docker swarm init
-    - run: cd play-with-docker
     - run: docker pull franela/dind
     - run: go mod vendor
     - run: docker-compose up -d
