@@ -24,6 +24,11 @@ jobs:
     - run: ls /Applications
     - run: ./run.sh
     - run: docker run --rm -v /etc:/blah golang ls /blah
+    - run: docker pull nginxdemos/hello
+    - run: docker run --rm -d -p 80:80 nginxdemos/hello
+    - run: sleep 10
+    - run: curl http://localhost
+
 
     # - run: touch README.md
     # - run: brew install docker
