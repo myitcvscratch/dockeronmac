@@ -4,6 +4,6 @@ jobs:
   test:
     runs-on: "macos-13"
     steps:
-      - name: Set up Docker
-        uses: crazy-max/ghaction-setup-docker@v1
+      - run: brew install colima
+      - run: colima start
       - run: docker run --rm -i golang pwd
