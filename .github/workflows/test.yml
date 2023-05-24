@@ -5,6 +5,7 @@ jobs:
     runs-on: "macos-13"
     steps:
       - run: brew install docker
+      - run: brew install colima
       - run: colima start
       - run: sudo ln -sf $HOME/.colima/default/docker.sock /var/run/docker.sock
       - run: docker run --rm -it golang pwd
