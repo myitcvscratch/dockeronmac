@@ -4,8 +4,6 @@ jobs:
   test:
     runs-on: "macos-13"
     steps:
-      - run: wget --quiet https://desktop.docker.com/mac/main/amd64/Docker.dmg
-      - run: sudo hdiutil attach Docker.dmg
-      - run: sudo /Volumes/Docker/Docker.app/Contents/MacOS/install --accept-license
-      - run: sudo hdiutil detach /Volumes/Docker
+      - run: brew install colima docker
+      - run: colima start
       - run: docker run --rm -i golang pwd
