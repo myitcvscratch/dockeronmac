@@ -4,6 +4,9 @@ jobs:
   test:
     runs-on: "macos-13"
     steps:
-      - run: brew install colima docker
-      - run: colima start
-      - run: docker run --rm -i golang pwd
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: '0.112.1'
+          extended: true
+      - run: hugo help
